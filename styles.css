@@ -986,5 +986,6 @@ button[type="submit"]:hover {
   .anim-fade-in {
     animation-name: fade-in;
     animation-duration: 2s;
+    
   }
 

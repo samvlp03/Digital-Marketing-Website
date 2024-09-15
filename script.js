@@ -41,7 +41,7 @@ app.post('/send-application', upload.single('cv'), (req, res) => {
     const mailOptions = {
         from: email,
         to: 'skaivomhelp@gmail.com',
-        subject: `New Job Application from ${fullName}`,
+        subject: `New Internship Application from ${fullName}`,
         text: `Name: ${fullName}\nEmail: ${email}\nPhone Number: ${number}\nGender: ${gender}\nInternship: ${internship}`,
         attachments: [
             {
@@ -67,4 +67,33 @@ app.listen(3000, () => {
 const button = document.getElementById('myButton');
 button.addEventListener('click', () => {
     window.location.href = 'about.html';
+});
+
+
+app.post('/send-application', (req, res) => {
+    const { fullName, email, number, gender, course} = req.body;
+
+
+    const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'your-email@gmail.com', // replace with your email
+            pass: 'your-email-password'   // replace with your email password
+        }
+    });
+
+    const mailOptions = {
+        from: email,
+        to: 'skaivomhelp@gmail.com',
+        subject: `New Course Application from ${fullName}`,
+        text: `Name: ${fullName}\nEmail: ${email}\nPhone Number: ${number}\nGender: ${gender}\nCourse: ${course}`,
+        
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            return res.status(500).send('Failed to send application. Please try again.');
+        }
+        res.send('Your application has been sent successfully!');
+    });
 });

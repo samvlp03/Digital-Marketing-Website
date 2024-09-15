@@ -5,7 +5,9 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Moderustic', sans-serif;
+
 }
+
 
 html{
     --primary-clr: #f9d80f;
@@ -171,6 +173,7 @@ body{
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    
 }
 
 .home .banner .home-overlay{
@@ -203,6 +206,7 @@ body{
     font-weight: 500;
     line-height: 1.3;
     margin-bottom: 20px;
+    transition: all 0.5s ease-in;
 }
 
 .home .banner .text-wrapper p{
@@ -786,6 +790,110 @@ button[type="submit"]:hover {
     background-color: #350a54;
 }
 
+.course-content{
+    position: relative;
+    max-width: 600px;
+    color: var(--dark-heading-clr);
+    top: -60px;
+    z-index: 2;
+    justify-self: unset;
+}
+
+.course-content h1{
+    font-size: calc(40px + 1.5vw);
+    font-weight: 500;
+    line-height: 1.3;
+    margin-bottom: 20px;
+    color: var(--dark-heading-clr);
+}
+
+
+.course{
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(images/career.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 0px 8%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.course .course-overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255,255,255,0.5);
+    z-index: 1;
+}
+
+.courses{
+    position: relative;
+    width: 100%;
+    padding: 0px 8%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    z-index: 3;
+}
+
+.courses .course-box{
+    position: relative;
+    padding: 35px 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--light-heading-clr);
+    top: -60px;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+    z-index: 3;
+    text-align: center;
+}
+
+.courses .course-box a{
+    text-decoration: none;
+    color: var(--secondary-clr);
+    margin: 5px 5px;
+}
+
+.courses .course-box a:hover{
+    color: var(--primary-clr);
+}
+
+.courses .course-box .course-icon{
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-light-clr);
+    border-radius: 5% 50% 5% 50%;
+}
+
+.courses .course-box .course-icon i{
+    font-size: 30px;
+    color: var(--secondary-clr);
+}
+
+.courses .course-box h2{
+    font-size: calc(16px + 0.6vw);
+    font-weight: 500;
+    color: var(--dark-heading-clr);
+    text-transform: capitalize;
+    margin: 20px 0px 10px;
+}
+
+.courses .course-box p{
+    font-size: 15px;
+    color: var(--dark-text-clr);
+    text-align: center;
+    line-height: 1.3;
+}
 
 
 
